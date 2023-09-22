@@ -1,5 +1,5 @@
-import { ProductionOrder } from "../../../entities/ProductionOrder";
-import { ProductionOrderRepository } from "../../../repositories/ProductionOrderRepository";
+import { ProductionOrder } from "../../../../entities/ProductionOrder";
+import { ProductionOrderRepository } from "../../../../repositories/ProductionOrderRepository";
 
 export class ListProductionOrdersWithName {
 	private productionOrderRepository: ProductionOrderRepository;
