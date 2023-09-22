@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { FindMoldPiece } from "./FindMoldPiece";
-import prismaInstance from "@/prisma/PrismaSingletonInstance";
-import { PrismaMoldPieceRepository } from "@/repositories/PrismaRepository/PrismaMoldPieceRepository";
+import prismaInstance from "../../../prisma/PrismaSingletonInstance";
+import { PrismaMoldPieceRepository } from "../../../repositories/PrismaRepository/PrismaMoldPieceRepository";
 
 export class FindMoldPieceController {
 	private findMoldPiece: FindMoldPiece;

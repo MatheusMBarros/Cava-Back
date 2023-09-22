@@ -1,1 +1,0 @@
-{"version":3,"file":"ListPiece.js","sourceRoot":"","sources":["../../../../src/use-case/Piece-Use-Cases/ListPiece/ListPiece.ts"],"names":[],"mappings":";;;;;;;;;;;;AAGA,MAAa,SAAS;IAGpB,YAAY,eAAgC;QAC1C,IAAI,CAAC,eAAe,GAAG,eAAe,CAAC;IACzC,CAAC;IAEK,OAAO;;YACX,MAAM,KAAK,GAAG,MAAM,IAAI,CAAC,eAAe,CAAC,OAAO,EAAE,CAAC;YACnD,OAAO,KAAK,CAAC;QACf,CAAC;KAAA;CACF;AAXD,8BAWC"}

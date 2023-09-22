@@ -1,6 +1,7 @@
-import { Piece } from "@/entities/Piece";
-import { CreatePieceDTO } from "@/use-case/Piece-Use-Cases/CreatePiece/CreatePieceDTO";
-import { UpdatePieceDTO } from "@/use-case/Piece-Use-Cases/UpdatePiece/UpdatePieceDTO";
+import { Piece } from "../entities/Piece";
+import { CreatePieceDTO } from "../use-case/Piece-Use-Cases/CreatePiece/CreatePieceDTO";
+import { UpdatePieceDTO } from "../use-case/Piece-Use-Cases/UpdatePiece/UpdatePieceDTO";
+
 
 export interface PieceRepository {
 	create(piece: CreatePieceDTO): Promise<void>;

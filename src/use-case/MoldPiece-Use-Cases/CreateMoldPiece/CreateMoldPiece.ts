@@ -1,4 +1,4 @@
-import { MoldPieceRepository } from "@/repositories/MoldPieceRepository";
+import { MoldPieceRepository } from "../../../repositories/MoldPieceRepository";
 import { CreateMoldPieceDTO } from "./CreateMoldPieceDTO";
 
 type CreateMoldPieceRequest = {

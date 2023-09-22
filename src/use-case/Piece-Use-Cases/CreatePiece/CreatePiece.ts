@@ -1,4 +1,4 @@
-import { PieceRepository } from "@/repositories/PieceRepository";
+import { PieceRepository } from "../../../repositories/PieceRepository";
 import { CreatePieceDTO } from "./CreatePieceDTO";
 
 type CreatePieceRequest = {

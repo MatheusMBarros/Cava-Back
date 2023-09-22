@@ -1,6 +1,6 @@
 import { Employee } from "../entities/Employee";
-import { UpdateEmployeeDTO } from "@/use-case/Employee-Use-Cases/UpdateEmployee/UpdateEmployeeDTO";
-import { CreateEmployeeDTO } from "@/use-case/Employee-Use-Cases/CreateEmployee/CreateEmployeeDTO";
+import { CreateEmployeeDTO } from "../use-case/Employee-Use-Cases/CreateEmployee/CreateEmployeeDTO";
+import { UpdateEmployeeDTO } from "../use-case/Employee-Use-Cases/UpdateEmployee/UpdateEmployeeDTO";
 
 export interface EmployeeRepository {
 	findAll(): Promise<Employee[]>;

@@ -1,5 +1,5 @@
-import { MoldPiece } from "@/entities/MoldPiece";
-import { MoldPieceRepository } from "@/repositories/MoldPieceRepository";
+import { MoldPiece } from "../../../entities/MoldPiece";
+import { MoldPieceRepository } from "../../../repositories/MoldPieceRepository";
 
 class FindPiecesByMold {
 	private moldPieceRepository: MoldPieceRepository;

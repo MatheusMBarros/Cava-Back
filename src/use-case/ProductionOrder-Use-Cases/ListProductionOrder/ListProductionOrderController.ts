@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { PrismaProductionOrderRepository } from "@/repositories/PrismaRepository/PrismaProductionOrderRepository";
-import prismaInstance from "@/prisma/PrismaSingletonInstance";
+import { PrismaProductionOrderRepository } from "../../../repositories/PrismaRepository/PrismaProductionOrderRepository";
+import prismaInstance from "../../../prisma/PrismaSingletonInstance";
 import { ListProductionOrder } from "./ListProductionOrder";
 
 export class ListProductionOrderController {

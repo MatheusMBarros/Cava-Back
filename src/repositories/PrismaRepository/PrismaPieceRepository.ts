@@ -1,8 +1,8 @@
-import { Piece } from "@/entities/Piece";
-import { CreatePieceDTO } from "@/use-case/Piece-Use-Cases/CreatePiece/CreatePieceDTO";
-import { UpdatePieceDTO } from "@/use-case/Piece-Use-Cases/UpdatePiece/UpdatePieceDTO";
 import { PrismaClient } from "@prisma/client";
 import { PieceRepository } from "../PieceRepository";
+import { Piece } from "../../entities/Piece";
+import { CreatePieceDTO } from "../../use-case/Piece-Use-Cases/CreatePiece/CreatePieceDTO";
+import { UpdatePieceDTO } from "../../use-case/Piece-Use-Cases/UpdatePiece/UpdatePieceDTO";
 
 export class PrismaPieceRepository implements PieceRepository {
 	private prisma: PrismaClient;
@@ -115,7 +115,7 @@ export class PrismaPieceRepository implements PieceRepository {
 		try {
 			const pieces = await this.prisma.piece.findMany();
 			return pieces.map(
-				(piece) =>
+				(piece: any) =>
 					new Piece(
 						piece.piece_id,
 						piece.name,

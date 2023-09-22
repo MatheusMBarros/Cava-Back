@@ -1,4 +1,4 @@
-import { MoldRepository } from "@/repositories/MoldRepository";
+import { MoldRepository } from "../../../repositories/MoldRepository";
 
 export class DeleteMold {
   private moldRepository: MoldRepository;

@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { DeleteProductionOrder } from "./DeleteProductionOrder";
-import { PrismaProductionOrderRepository } from "@/repositories/PrismaRepository/PrismaProductionOrderRepository";
-import prismaInstance from "@/prisma/PrismaSingletonInstance";
+import { PrismaProductionOrderRepository } from "../../../repositories/PrismaRepository/PrismaProductionOrderRepository";
+import prismaInstance from "../../../prisma/PrismaSingletonInstance";
 
 export class DeleteProductionOrderController {
 	private deleteProductionOrder: DeleteProductionOrder;

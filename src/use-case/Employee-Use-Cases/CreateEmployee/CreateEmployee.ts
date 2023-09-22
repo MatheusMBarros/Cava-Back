@@ -1,4 +1,4 @@
-import { EmployeeRepository } from "@/repositories/EmployeeRepository";
+import { EmployeeRepository } from "../../../repositories/EmployeeRepository";
 import { CreateEmployeeDTO } from "./CreateEmployeeDTO";
 import crypto from "crypto";
 

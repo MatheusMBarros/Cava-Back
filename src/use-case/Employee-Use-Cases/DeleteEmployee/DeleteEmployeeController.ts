@@ -1,6 +1,6 @@
-import prismaInstance from "@/prisma/PrismaSingletonInstance";
+import prismaInstance from "../../../prisma/PrismaSingletonInstance";
+import { PrismaEmployeeRepository } from "../../../repositories/PrismaRepository/PrismaEmployeeRepository";
 import { DeleteEmployee } from "./DeleteEmployee";
-import { PrismaEmployeeRepository } from "@/repositories/PrismaRepository/PrismaEmployeeRepository";
 import { Request, Response } from "express";
 
 export class DeleteEmployeeController {

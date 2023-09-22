@@ -1,5 +1,6 @@
-import prismaInstance from "@/prisma/PrismaSingletonInstance";
-import { PrismaMoldRepository } from "@/repositories/PrismaRepository/PrismaMoldRepository";
+
+import prismaInstance from "../../../prisma/PrismaSingletonInstance";
+import { PrismaMoldRepository } from "../../../repositories/PrismaRepository/PrismaMoldRepository";
 import { DeleteMold } from "./DeleteMold";
 import { Request, Response } from "express";
 export class DeleteMoldController {

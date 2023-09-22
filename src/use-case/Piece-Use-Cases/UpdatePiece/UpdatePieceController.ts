@@ -1,5 +1,5 @@
-import prismaInstance from "@/prisma/PrismaSingletonInstance";
-import { PrismaPieceRepository } from "@/repositories/PrismaRepository/PrismaPieceRepository";
+import prismaInstance from "../../../prisma/PrismaSingletonInstance";
+import { PrismaPieceRepository } from "../../../repositories/PrismaRepository/PrismaPieceRepository";
 import { Request, Response } from "express";
 import { UpdatePiece } from "./UpdatePiece";
 

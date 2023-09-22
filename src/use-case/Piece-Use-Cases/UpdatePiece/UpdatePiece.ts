@@ -1,5 +1,5 @@
-import { PieceRepository } from "@/repositories/PieceRepository";
-import { Piece } from "@/entities/Piece";
+import { PieceRepository } from "../../../repositories/PieceRepository";
+import { Piece } from "../../../entities/Piece";
 import { UpdatePieceDTO } from "./UpdatePieceDTO";
 
 export class UpdatePiece {

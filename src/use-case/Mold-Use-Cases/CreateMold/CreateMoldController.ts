@@ -1,7 +1,8 @@
-import prismaInstance from "@/prisma/PrismaSingletonInstance";
-import { PrismaMoldRepository } from "@/repositories/PrismaRepository/PrismaMoldRepository";
+
 import { Request, Response } from "express";
 import { CreateMold } from "./CreateMold";
+import prismaInstance from "../../../prisma/PrismaSingletonInstance";
+import { PrismaMoldRepository } from "../../../repositories/PrismaRepository/PrismaMoldRepository";
 
 export class CreateMoldController {
 	private createMold: CreateMold;

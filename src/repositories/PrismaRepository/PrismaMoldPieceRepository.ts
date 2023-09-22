@@ -1,9 +1,9 @@
-import { MoldPiece } from "@/entities/MoldPiece";
-import { CreateMoldPieceDTO } from "@/use-case/MoldPiece-Use-Cases/CreateMoldPiece/CreateMoldPieceDTO";
-import { UpdateMoldPieceDTO } from "@/use-case/MoldPiece-Use-Cases/UpdateMoldPiece/UpdateMoldPieceDTO";
 import { PrismaClient } from "@prisma/client";
 import { MoldPieceRepository } from "../MoldPieceRepository";
-import { cavityFilled } from "@/use-case/MoldPiece-Use-Cases/CreateMoldPiece/CreateModlPieceDMO";
+import { MoldPiece } from "../../entities/MoldPiece";
+import { cavityFilled } from "../../use-case/MoldPiece-Use-Cases/CreateMoldPiece/CreateModlPieceDMO";
+import { CreateMoldPieceDTO } from "../../use-case/MoldPiece-Use-Cases/CreateMoldPiece/CreateMoldPieceDTO";
+import { UpdateMoldPieceDTO } from "../../use-case/MoldPiece-Use-Cases/UpdateMoldPiece/UpdateMoldPieceDTO";
 
 export class PrismaMoldPieceRepository implements MoldPieceRepository {
 	private prisma: PrismaClient;
@@ -70,7 +70,7 @@ export class PrismaMoldPieceRepository implements MoldPieceRepository {
 			},
 		});
 		return moldPieces.map(
-			(moldPiece) =>
+			(moldPiece: any) =>
 				new MoldPiece(
 					moldPiece.mold_piece_id,
 					moldPiece.cavity,
@@ -146,7 +146,7 @@ export class PrismaMoldPieceRepository implements MoldPieceRepository {
 	async findAll(): Promise<MoldPiece[]> {
 		const moldPieces = await this.prisma.mold_Piece.findMany();
 		return moldPieces.map(
-			(moldPiece) =>
+			(moldPiece: any) =>
 				new MoldPiece(
 					moldPiece.mold_piece_id,
 					moldPiece.cavity,

@@ -1,4 +1,4 @@
-import { EmployeeRepository } from "@/repositories/EmployeeRepository";
+import { EmployeeRepository } from "../../../repositories/EmployeeRepository";
 
 export class DeleteEmployee {
   private employeeRepository: EmployeeRepository;

@@ -1,8 +1,8 @@
-import { Employee } from "@/entities/Employee";
-import { EmployeeRepository } from "../EmployeeRepository";
 import { PrismaClient } from "@prisma/client";
-import { CreateEmployeeDTO } from "@/use-case/Employee-Use-Cases/CreateEmployee/CreateEmployeeDTO";
-import { UpdateEmployeeDTO } from "@/use-case/Employee-Use-Cases/UpdateEmployee/UpdateEmployeeDTO";
+import { Employee } from "../../entities/Employee";
+import { CreateEmployeeDTO } from "../../use-case/Employee-Use-Cases/CreateEmployee/CreateEmployeeDTO";
+import { UpdateEmployeeDTO } from "../../use-case/Employee-Use-Cases/UpdateEmployee/UpdateEmployeeDTO";
+import { EmployeeRepository } from "../EmployeeRepository";
 
 export class PrismaEmployeeRepository implements EmployeeRepository {
 	private prisma: PrismaClient;
@@ -43,12 +43,12 @@ export class PrismaEmployeeRepository implements EmployeeRepository {
 	async findAll(): Promise<Employee[]> {
 		const employees = await this.prisma.employee.findMany();
 
-		return employees.map((employee) => {
+		return employees.map((employee: any) => {
 			return new Employee(
 				employee.employee_id,
-				employee.name,
-				employee.password,
-				employee.sector
+			employee.name,
+			employee.password,
+			employee.sector
 			);
 		});
 	}

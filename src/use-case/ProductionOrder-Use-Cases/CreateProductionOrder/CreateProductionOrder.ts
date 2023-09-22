@@ -1,4 +1,4 @@
-import { ProductionOrderRepository } from "@/repositories/ProductionOrderRepository";
+import { ProductionOrderRepository } from "../../../repositories/ProductionOrderRepository";
 import { CreateProductionOrderDTO } from "./CreateProductionOrderDTO";
 
 export type CreateProductionOrderRequest = {

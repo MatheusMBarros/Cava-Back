@@ -1,7 +1,8 @@
 import { Request, Response } from "express";
+import prismaInstance from "../../../prisma/PrismaSingletonInstance";
+import { PrismaEmployeeRepository } from "../../../repositories/PrismaRepository/PrismaEmployeeRepository";
 import { ReadEmployee } from "./ReadEmployee";
-import prismaInstance from "@/prisma/PrismaSingletonInstance";
-import { PrismaEmployeeRepository } from "@/repositories/PrismaRepository/PrismaEmployeeRepository";
+
 
 export class ReadEmployeeController {
 	private readEmployee: ReadEmployee;

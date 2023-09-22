@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { UpdateProductionOrder } from "./UpdateProductionOrder";
-import { PrismaProductionOrderRepository } from "@/repositories/PrismaRepository/PrismaProductionOrderRepository";
-import prismaInstance from "@/prisma/PrismaSingletonInstance";
+import { PrismaProductionOrderRepository } from "../../../repositories/PrismaRepository/PrismaProductionOrderRepository";
+import prismaInstance from "../../../prisma/PrismaSingletonInstance";
 
 export class UpdateProductionOrderController {
 	private updateProductionOrder: UpdateProductionOrder;

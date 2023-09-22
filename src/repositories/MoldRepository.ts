@@ -1,6 +1,6 @@
-import { Mold } from "@/entities/Mold";
-import { CreateMoldDTO } from "@/use-case/Mold-Use-Cases/CreateMold/CreateMoldDTO";
-import { UpdateMoldDTO } from "@/use-case/Mold-Use-Cases/UpdateMold/UpdateMoldDTO";
+import { Mold } from "../entities/Mold";
+import { CreateMoldDTO } from "../use-case/Mold-Use-Cases/CreateMold/CreateMoldDTO";
+import { UpdateMoldDTO } from "../use-case/Mold-Use-Cases/UpdateMold/UpdateMoldDTO";
 
 export interface MoldRepository {
 	create(mold: CreateMoldDTO): Promise<void>;

@@ -1,7 +1,8 @@
-import { ProductionOrder } from "@/entities/ProductionOrder";
-import { CreateProductionOrderDTO } from "@/use-case/ProductionOrder-Use-Cases/CreateProductionOrder/CreateProductionOrderDTO";
-import { LastOrderDTO } from "@/use-case/ProductionOrder-Use-Cases/LastOrder/LastOrderDTO";
-import { UpdateProductionOrderDTO } from "@/use-case/ProductionOrder-Use-Cases/UpdateProductionOrder/UpdateProductionOrderDTO";
+import { ProductionOrder } from "../entities/ProductionOrder";
+import { CreateProductionOrderDTO } from "../use-case/ProductionOrder-Use-Cases/CreateProductionOrder/CreateProductionOrderDTO";
+import { LastOrderDTO } from "../use-case/ProductionOrder-Use-Cases/LastOrder/LastOrderDTO";
+import { UpdateProductionOrderDTO } from "../use-case/ProductionOrder-Use-Cases/UpdateProductionOrder/UpdateProductionOrderDTO";
+
 
 export interface ProductionOrderRepository {
 	create(productionOrder: CreateProductionOrderDTO): Promise<void>;

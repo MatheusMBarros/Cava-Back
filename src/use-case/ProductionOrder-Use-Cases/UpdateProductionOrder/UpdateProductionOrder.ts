@@ -1,5 +1,5 @@
-import { ProductionOrder } from "@/entities/ProductionOrder";
-import { ProductionOrderRepository } from "@/repositories/ProductionOrderRepository";
+import { ProductionOrder } from "../../../entities/ProductionOrder";
+import { ProductionOrderRepository } from "../../../repositories/ProductionOrderRepository";
 import { UpdateProductionOrderDTO } from "./UpdateProductionOrderDTO";
 
 export class UpdateProductionOrder {

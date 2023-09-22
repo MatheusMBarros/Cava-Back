@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { ListEmployees } from "./ListEmployees";
-import { PrismaEmployeeRepository } from "@/repositories/PrismaRepository/PrismaEmployeeRepository";
-import prismaInstance from "@/prisma/PrismaSingletonInstance";
+import prismaInstance from "../../../prisma/PrismaSingletonInstance";
+import { PrismaEmployeeRepository } from "../../../repositories/PrismaRepository/PrismaEmployeeRepository";
 
 export class ListEmployeesController {
 	private listEmployees: ListEmployees;

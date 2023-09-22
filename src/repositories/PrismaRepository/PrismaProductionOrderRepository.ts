@@ -1,11 +1,12 @@
 import { PrismaClient } from "@prisma/client";
 import { ProductionOrderRepository } from "../ProductionOrderRepository";
-import { ProductionOrder } from "@/entities/ProductionOrder";
-import { CreateProductionOrderDTO } from "@/use-case/ProductionOrder-Use-Cases/CreateProductionOrder/CreateProductionOrderDTO";
-import { UpdateProductionOrderDTO } from "@/use-case/ProductionOrder-Use-Cases/UpdateProductionOrder/UpdateProductionOrderDTO";
-import { formatData } from "@/utils/FormaterData";
-import { LastOrderDTO } from "@/use-case/ProductionOrder-Use-Cases/LastOrder/LastOrderDTO";
 import { as } from "pg-promise";
+import { CreateProductionOrderDTO } from "../../use-case/ProductionOrder-Use-Cases/CreateProductionOrder/CreateProductionOrderDTO";
+import { LastOrderDTO } from "../../use-case/ProductionOrder-Use-Cases/LastOrder/LastOrderDTO";
+import { UpdateProductionOrderDTO } from "../../use-case/ProductionOrder-Use-Cases/UpdateProductionOrder/UpdateProductionOrderDTO";
+import { formatData } from "../../utils/FormaterData";
+import { ProductionOrder } from "../../entities/ProductionOrder";
+
 export class PrismaProductionOrderRepository
 	implements ProductionOrderRepository
 {
@@ -61,7 +62,7 @@ export class PrismaProductionOrderRepository
 				throw new Error("Nenhuma ProductionOrder encontrada.");
 			}
 
-			const pOrders = productionOrders.map((productionOrder) => ({
+			const pOrders = productionOrders.map((productionOrder: any) => ({
 				id: productionOrder.production_order_id,
 				initial_counter: productionOrder.initial_counter,
 				final_counter:
@@ -232,7 +233,7 @@ export class PrismaProductionOrderRepository
 		}
 
 		return productionOrders.map(
-			(productionOrder) =>
+			(productionOrder: any) =>
 				new ProductionOrder(
 					productionOrder.production_order_id,
 					productionOrder.initial_counter,

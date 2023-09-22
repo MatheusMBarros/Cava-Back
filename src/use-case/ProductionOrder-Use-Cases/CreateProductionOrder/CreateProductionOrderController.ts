@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { PrismaProductionOrderRepository } from "@/repositories/PrismaRepository/PrismaProductionOrderRepository";
+import { PrismaProductionOrderRepository } from "../../../repositories/PrismaRepository/PrismaProductionOrderRepository";
 import { CreateProductionOrder } from "./CreateProductionOrder";
-import prismaInstance from "@/prisma/PrismaSingletonInstance";
+import prismaInstance from "../../../prisma/PrismaSingletonInstance";
 
 export class CreateProductionOrderController {
 	private createProductionOrder: CreateProductionOrder;

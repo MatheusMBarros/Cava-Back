@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { PrismaPieceRepository } from "@/repositories/PrismaRepository/PrismaPieceRepository";
+import { PrismaPieceRepository } from "../../../repositories/PrismaRepository/PrismaPieceRepository";
 import { DeletePiece } from "./DeletePiece";
-import prismaInstance from "@/prisma/PrismaSingletonInstance";
+import prismaInstance from "../../../prisma/PrismaSingletonInstance";
 
 export class DeletePieceController {
 	private deletePiece: DeletePiece;

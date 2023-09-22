@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { UpdateMold } from "./UpdateMold";
-import prismaInstance from "@/prisma/PrismaSingletonInstance";
-import { PrismaMoldRepository } from "@/repositories/PrismaRepository/PrismaMoldRepository";
+import prismaInstance from "../../../prisma/PrismaSingletonInstance";
+import { PrismaMoldRepository } from "../../../repositories/PrismaRepository/PrismaMoldRepository";
 
 export class UpdateMoldController {
 	private updateMold: UpdateMold;

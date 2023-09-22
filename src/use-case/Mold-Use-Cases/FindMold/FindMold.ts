@@ -1,5 +1,6 @@
-import { Mold } from "@/entities/Mold";
-import { MoldRepository } from "@/repositories/MoldRepository";
+import { Mold } from "../../../entities/Mold";
+import { MoldRepository } from "../../../repositories/MoldRepository";
+
 
 export class FindMold {
 	private moldRepository: MoldRepository;

@@ -1,4 +1,4 @@
-import { MoldPieceRepository } from "@/repositories/MoldPieceRepository";
+import { MoldPieceRepository } from "../../../repositories/MoldPieceRepository";
 
 export class ReturnTotalAluminiumLostPerMold {
 	private moldPieceRepository: MoldPieceRepository;

@@ -1,5 +1,5 @@
-import { MoldRepository } from "@/repositories/MoldRepository";
-import { UpdateMoldDTO } from "@/use-case/Mold-Use-Cases/UpdateMold/UpdateMoldDTO";
+import { MoldRepository } from "../../../repositories/MoldRepository";
+import { UpdateMoldDTO } from "../../../use-case/Mold-Use-Cases/UpdateMold/UpdateMoldDTO";
 export class UpdateMold {
 	private moldRepository: MoldRepository;
 	constructor(moldRepository: MoldRepository) {

@@ -1,4 +1,4 @@
-import { EmployeeRepository } from "@/repositories/EmployeeRepository";
+import { EmployeeRepository } from "../../../repositories/EmployeeRepository";
 
 interface UpdateEmployeeRequest {
 	id: number;

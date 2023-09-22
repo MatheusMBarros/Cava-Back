@@ -1,8 +1,9 @@
 import { PrismaClient } from "@prisma/client";
-import { Mold } from "@/entities/Mold";
-import { CreateMoldDTO } from "@/use-case/Mold-Use-Cases/CreateMold/CreateMoldDTO";
-import { UpdateMoldDTO } from "@/use-case/Mold-Use-Cases/UpdateMold/UpdateMoldDTO";
+
 import { MoldRepository } from "../MoldRepository";
+import { Mold } from "../../entities/Mold";
+import { CreateMoldDTO } from "../../use-case/Mold-Use-Cases/CreateMold/CreateMoldDTO";
+import { UpdateMoldDTO } from "../../use-case/Mold-Use-Cases/UpdateMold/UpdateMoldDTO";
 
 export class PrismaMoldRepository implements MoldRepository {
 	private prisma: PrismaClient;
@@ -100,7 +101,7 @@ export class PrismaMoldRepository implements MoldRepository {
 		try {
 			const molds = await this.prisma.mold.findMany();
 			return molds.map(
-				(mold) =>
+				(mold: any) =>
 					new Mold(
 						mold.mold_id,
 						mold.name,
