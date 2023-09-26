@@ -5,7 +5,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL") // Você pode definir a variável DATABASE_URL no arquivo .env ou fornecer diretamente aqui
+  url      = "postgres://cavabd_db_user:3HFVPj7Kthlmbv3oYh4GGeGosxlr4XCU@dpg-cjri480jbais739qedv0-a.ohio-postgres.render.com/cavabd_db"
 }
 
 model Employee {
