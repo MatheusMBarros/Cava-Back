@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
     "outDir": "./dist", // Pasta de saída para os arquivos transpilados
     "jsx": "preserve",
     "esModuleInterop": true,
@@ -11,7 +10,6 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "forceConsistentCasingInFileNames": true,
     "target": "es6",
     "lib": ["es6", "dom"],
     "sourceMap": true,

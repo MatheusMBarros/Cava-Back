@@ -12,18 +12,18 @@ export class CreateEmployeeController {
 		);
 	}
 
-	async execute(req: Request, res: Response): Promise<Response> {
+	async execute(request: Request, response: Response): Promise<Response> {
 		try {
-			const { name, sector, password } = req.body;
+			const { name, sector, password } = request.body;
 			const employee = {
 				name,
 				sector,
 				password,
 			};
 			await this.createEmployee.create(employee);
-			return res.status(201).send();
+			return response.status(201).send();
 		} catch (error: any) {
-			return res.status(400).json({
+			return response.status(400).json({
 				message: error.message || "Something went wrong",
 			});
 		}

@@ -14,7 +14,6 @@ export class DeletePieceController {
 	async execute(req: Request, res: Response): Promise<Response> {
 		try {
 			const { id } = req.params;
-			console.log(id);
 			await this.deletePiece.delete(Number(id));
 			return res.status(200).send();
 		} catch (error: any) {
