@@ -46,9 +46,9 @@ export class PrismaEmployeeRepository implements EmployeeRepository {
 		return employees.map((employee: any) => {
 			return new Employee(
 				employee.employee_id,
-			employee.name,
-			employee.password,
-			employee.sector
+				employee.name,
+				employee.password,
+				employee.sector
 			);
 		});
 	}

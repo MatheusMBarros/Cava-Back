@@ -1,5 +1,4 @@
 import { PrismaClient } from "@prisma/client";
-
 import { MoldRepository } from "../MoldRepository";
 import { Mold } from "../../entities/Mold";
 import { CreateMoldDTO } from "../../use-case/Mold-Use-Cases/CreateMold/CreateMoldDTO";
@@ -32,9 +31,7 @@ export class PrismaMoldRepository implements MoldRepository {
 		});
 	}
 
-	findByName(name: string): Promise<Mold> {
-		throw new Error("Method not implemented.");
-	}
+	
 	async delete(id: number): Promise<void> {
 		try {
 			await this.prisma.mold.delete({

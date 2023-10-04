@@ -10,9 +10,6 @@ export class PrismaPieceRepository implements PieceRepository {
 	constructor(prisma: PrismaClient) {
 		this.prisma = prisma;
 	}
-	findByName(piece_name: string): Promise<Piece> {
-		throw new Error("Method not implemented.");
-	}
 	async findById(id: number): Promise<Piece> {
 		try {
 			const piece = await this.prisma.piece.findUnique({

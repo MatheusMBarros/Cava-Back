@@ -23,7 +23,6 @@ export class PrismaMoldPieceRepository implements MoldPieceRepository {
 
 			for (const moldPiece of moldPieces) {
 				try {
-					// Obtém informações sobre a peça, incluindo o campo 'splinter'
 					const piece = await this.prisma.piece.findUnique({
 						where: {
 							piece_id: moldPiece.piece_fk,
@@ -32,21 +31,14 @@ export class PrismaMoldPieceRepository implements MoldPieceRepository {
 							splinter: true,
 						},
 					});
-					// Verifica se a peça foi encontrada no banco de dados
 					if (piece) {
-						// Calcula a perda de alumínio para esta peça com base no valor de 'splinter'
-						const pieceAluminiumLoss = piece.splinter || 0; // Suponhamos que 0 seja um valor padrão se 'splinter' estiver ausente.
-
-						// Adiciona a perda de alumínio desta peça à perda total
+						const pieceAluminiumLoss = piece.splinter ; 
 						totalAluminiumLoss += pieceAluminiumLoss;
 					}
 				} catch (error: any) {
-					// Lida com erros ao consultar informações da peça
 					console.error(`Erro ao obter informações da peça: ${error.message}`);
 				}
 			}
-
-			// No final, adicione a perda de alumínio do molde à perda total
 			const mold = await this.prisma.mold.findUnique({
 				where: {
 					mold_id: moldId,
@@ -79,6 +71,7 @@ export class PrismaMoldPieceRepository implements MoldPieceRepository {
 				)
 		);
 	}
+	
 	async create(moldPiece: CreateMoldPieceDTO): Promise<void> {
 		const existingMoldPiece = await cavityFilled({
 			prisma: this.prisma,

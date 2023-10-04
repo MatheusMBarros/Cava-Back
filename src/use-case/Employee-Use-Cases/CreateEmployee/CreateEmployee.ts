@@ -1,6 +1,5 @@
 import { EmployeeRepository } from "../../../repositories/EmployeeRepository";
 import { CreateEmployeeDTO } from "./CreateEmployeeDTO";
-import crypto from "crypto";
 
 type CreateEmployeeRequest = {
 	name: string;

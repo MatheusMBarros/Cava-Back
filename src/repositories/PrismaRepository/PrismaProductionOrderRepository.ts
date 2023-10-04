@@ -1,6 +1,5 @@
 import { PrismaClient } from "@prisma/client";
 import { ProductionOrderRepository } from "../ProductionOrderRepository";
-import { as } from "pg-promise";
 import { CreateProductionOrderDTO } from "../../use-case/ProductionOrder-Use-Cases/CreateProductionOrder/CreateProductionOrderDTO";
 import { LastOrderDTO } from "../../use-case/ProductionOrder-Use-Cases/LastOrder/LastOrderDTO";
 import { UpdateProductionOrderDTO } from "../../use-case/ProductionOrder-Use-Cases/UpdateProductionOrder/UpdateProductionOrderDTO";

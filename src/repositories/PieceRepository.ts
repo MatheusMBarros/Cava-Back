@@ -9,5 +9,4 @@ export interface PieceRepository {
 	delete(id: number): Promise<void>;
 	update(updatePiece: UpdatePieceDTO): Promise<Piece>;
 	findAll(): Promise<Piece[]>;
-	findByName(piece_name: string): Promise<Piece>;
 }
