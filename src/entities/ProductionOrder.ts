@@ -24,7 +24,7 @@ export class ProductionOrder {
 		this.initial_counter = initial_counter;
 		this.final_counter = final_counter;
 		this.quantity = quantity;
-		this.created_at = created_at;
+		this.created_at = created_at ;
 		this.updated_at = updated_at;
 		this.employee_fk = employee_fk;
 		this.mold_fk = mold_fk;
