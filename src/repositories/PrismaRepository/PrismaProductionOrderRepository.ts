@@ -1,10 +1,10 @@
-import { PrismaClient } from "@prisma/client";
 import { ProductionOrderRepository } from "../ProductionOrderRepository";
 import { CreateProductionOrderDTO } from "../../use-case/ProductionOrder-Use-Cases/CreateProductionOrder/CreateProductionOrderDTO";
 import { LastOrderDTO } from "../../use-case/ProductionOrder-Use-Cases/LastOrder/LastOrderDTO";
 import { UpdateProductionOrderDTO } from "../../use-case/ProductionOrder-Use-Cases/UpdateProductionOrder/UpdateProductionOrderDTO";
 import { formatData } from "../../utils/FormaterData";
 import { ProductionOrder } from "../../entities/ProductionOrder";
+import { PrismaClient } from "../../prisma/generated/client";
 
 export class PrismaProductionOrderRepository
 	implements ProductionOrderRepository
@@ -23,9 +23,9 @@ export class PrismaProductionOrderRepository
 				employee_fk,
 				mold_fk,
 				description,
+				created_at,
+				finished_at,
 			} = productionOrder;
-			const dataAtual = new Date();
-			const dataFormatada = formatData(dataAtual);
 
 			if (description === null) {
 				throw new Error("Descrição não pode ser nula.");
@@ -36,8 +36,8 @@ export class PrismaProductionOrderRepository
 					initial_counter: initial_counter,
 					final_counter: final_counter,
 					mold_quantity: final_counter - initial_counter,
-					created_at: dataFormatada,
-					updated_at: dataFormatada,
+					created_at: created_at,
+					finished_at: finished_at,
 					employee_fk: employee_fk,
 					mold_fk: mold_fk,
 					description: description,
@@ -68,7 +68,7 @@ export class PrismaProductionOrderRepository
 					productionOrder.final_counter ?? productionOrder.initial_counter,
 				quantity: productionOrder.mold_quantity,
 				created_at: productionOrder.created_at,
-				updated_at: productionOrder.updated_at,
+				finished_at: productionOrder.finished_at,
 				employee_fk: productionOrder.employee_fk,
 				mold_fk: productionOrder.mold_fk ?? 0,
 				description: productionOrder.description ?? "Sem descrição",
@@ -99,7 +99,7 @@ export class PrismaProductionOrderRepository
 				final_counter: lastOrder.final_counter ?? lastOrder.initial_counter,
 				mold_quantity: lastOrder.mold_quantity,
 				created_at: lastOrder.created_at,
-				updated_at: lastOrder.updated_at,
+				finished_at: lastOrder.finished_at ?? new Date(),
 				description: lastOrder.description ?? "Sem descrição",
 				mold_name: lastOrder.mold.name ?? "Nome de molde desconhecido",
 				employee_name:
@@ -114,7 +114,7 @@ export class PrismaProductionOrderRepository
 				final_counter: 0,
 				mold_quantity: 0,
 				created_at: new Date(),
-				updated_at: new Date(),
+				finished_at: new Date(),
 				description: "Sem descrição",
 				mold_name: "Sem nome de molde",
 				employee_name: "Sem nome de funcionário",
@@ -145,7 +145,7 @@ export class PrismaProductionOrderRepository
 			productionOrder.final_counter,
 			productionOrder.mold_quantity,
 			productionOrder.created_at,
-			productionOrder.updated_at,
+			productionOrder.finished_at ?? new Date(),
 			productionOrder.employee_fk,
 			productionOrder.mold_fk,
 			productionOrder.description
@@ -166,14 +166,13 @@ export class PrismaProductionOrderRepository
 		productionOrder: UpdateProductionOrderDTO
 	): Promise<ProductionOrder> {
 		try {
-			const { id, final_counter, employee_fk, mold_fk } = productionOrder;
-			const updatedTime = new Date();
-			const dataFormatada = formatData(updatedTime);
+			const { id, final_counter, employee_fk, mold_fk, finished_at } =
+				productionOrder;
 
 			const productionOrderUpdated = await this.prisma.production_Order.update({
 				where: { production_order_id: id },
 				data: {
-					updated_at: dataFormatada,
+					finished_at: finished_at,
 					final_counter: final_counter,
 					mold_quantity: final_counter - productionOrder.initial_counter,
 					employee_fk: employee_fk,
@@ -203,7 +202,8 @@ export class PrismaProductionOrderRepository
 				productionOrderUpdated.final_counter === null ||
 				productionOrderUpdated.mold_fk === null ||
 				productionOrderUpdated.employee_fk === null ||
-				productionOrderUpdated.description === null
+				productionOrderUpdated.description === null ||
+				productionOrderUpdated.finished_at === null
 			) {
 				throw new Error("Dados inválidos na ProductionOrder.");
 			}
@@ -214,7 +214,7 @@ export class PrismaProductionOrderRepository
 				productionOrderUpdated.final_counter,
 				productionOrderUpdated.mold_quantity,
 				productionOrderUpdated.created_at,
-				productionOrderUpdated.updated_at,
+				productionOrderUpdated.finished_at,
 				productionOrderUpdated.employee_fk,
 				productionOrderUpdated.mold_fk,
 				productionOrderUpdated.description
@@ -239,7 +239,7 @@ export class PrismaProductionOrderRepository
 					productionOrder.final_counter ?? productionOrder.initial_counter,
 					productionOrder.mold_quantity,
 					productionOrder.created_at,
-					productionOrder.updated_at,
+					productionOrder.finished_at,
 					productionOrder.employee_fk,
 					productionOrder.mold_fk ?? 0,
 					productionOrder.description ?? "Sem descrição"

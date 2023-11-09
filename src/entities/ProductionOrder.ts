@@ -4,7 +4,7 @@ export class ProductionOrder {
 	private final_counter: number;
 	private quantity: number;
 	private created_at: Date;
-	private updated_at: Date;
+	private finished_at: Date;
 	private employee_fk: number;
 	private mold_fk: number;
 	private description: string;
@@ -15,7 +15,7 @@ export class ProductionOrder {
 		final_counter: number,
 		quantity: number,
 		created_at: Date,
-		updated_at: Date,
+		finished_at: Date,
 		employee_fk: number,
 		mold_fk: number,
 		description: string
@@ -24,8 +24,8 @@ export class ProductionOrder {
 		this.initial_counter = initial_counter;
 		this.final_counter = final_counter;
 		this.quantity = quantity;
-		this.created_at = created_at ;
-		this.updated_at = updated_at;
+		this.created_at = created_at;
+		this.finished_at = finished_at;
 		this.employee_fk = employee_fk;
 		this.mold_fk = mold_fk;
 		this.description = description;
@@ -54,8 +54,8 @@ export class ProductionOrder {
 		return this.created_at;
 	}
 
-	public getUpdatedAt(): Date {
-		return this.updated_at;
+	public getUpdgetFinishedAt(): Date {
+		return this.finished_at;
 	}
 
 	public getEmployeeFk(): number {
@@ -90,8 +90,8 @@ export class ProductionOrder {
 		this.created_at = created_at;
 	}
 
-	public setUpdatedAt(updated_at: Date): void {
-		this.updated_at = updated_at;
+	public setFinishedAt(finished_at: Date): void {
+		this.finished_at = finished_at;
 	}
 
 	public setEmployeeFk(employee_fk: number): void {

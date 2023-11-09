@@ -52,9 +52,10 @@ model Mold_Piece {
 model Production_Order {
   production_order_id Int       @id @default(autoincrement())
   created_at          DateTime
-  finished_at          DateTime?
+  finished_at         DateTime?
+  //finished_at          DateTime
   initial_counter     Int
-  final_counter        Int?
+  final_counter       Int?
   employee_fk         Int
   mold_quantity       Int
   mold_fk             Int

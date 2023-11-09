@@ -15,7 +15,7 @@ export class CreateProductionOrderController {
 	async execute(req: Request, res: Response): Promise<Response> {
 		const {
 			created_at,
-			updated_at,
+			finished_at,
 			initial_counter,
 			final_counter,
 			employee_fk,
@@ -26,7 +26,7 @@ export class CreateProductionOrderController {
 		try {
 			await this.createProductionOrder.create({
 				created_at,
-				updated_at,
+				finished_at,
 				initial_counter,
 				final_counter,
 				employee_fk,
