@@ -4,7 +4,7 @@ export interface UpdateProductionOrderDTO {
 	initial_counter: number;
 	employee_fk: number;
 	mold_fk: number;
-	updated_at: Date;
+	finished_at: Date;
 	quantity: number;
 	description: string;
 }

@@ -5,7 +5,7 @@ export type CreateProductionOrderRequest = {
 	initial_counter: number;
 	final_counter: number;
 	created_at: Date;
-	updated_at: Date;
+	finished_at: Date;
 	mold_fk: number;
 	employee_fk: number;
 	description: string;
@@ -21,7 +21,7 @@ export class CreateProductionOrder {
 		initial_counter,
 		final_counter,
 		created_at,
-		updated_at,
+		finished_at,
 		mold_fk,
 		employee_fk,
 		description,
@@ -31,7 +31,7 @@ export class CreateProductionOrder {
 				initial_counter,
 				final_counter,
 				created_at,
-				updated_at,
+				finished_at,
 				mold_fk,
 				employee_fk,
 				description,

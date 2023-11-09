@@ -1,5 +1,3 @@
-
-
 generator client {
   provider      = "prisma-client-js"
   binaryTargets = ["native", "debian-openssl-1.1.x"]
@@ -52,15 +50,15 @@ model Mold_Piece {
 }
 
 model Production_Order {
-  production_order_id Int      @id @default(autoincrement())
-  created_at          DateTime @default(now())
-  updated_at          DateTime
+  production_order_id Int       @id @default(autoincrement())
+  created_at          DateTime
+  finished_at          DateTime?
   initial_counter     Int
-  final_counter       Int?
+  final_counter        Int?
   employee_fk         Int
   mold_quantity       Int
   mold_fk             Int
-  description         String?  @db.VarChar(300)
-  employee            Employee @relation(fields: [employee_fk], references: [employee_id])
-  mold                Mold     @relation(fields: [mold_fk], references: [mold_id])
+  description         String?   @db.VarChar(300)
+  employee            Employee  @relation(fields: [employee_fk], references: [employee_id])
+  mold                Mold      @relation(fields: [mold_fk], references: [mold_id])
 }

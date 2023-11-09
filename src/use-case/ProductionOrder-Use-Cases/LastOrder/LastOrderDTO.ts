@@ -6,6 +6,6 @@ export type LastOrderDTO = {
 	employee_name: string;
 	mold_name: string;
 	created_at: Date;
-	updated_at: Date;
+	finished_at: Date;
 	description: string;
 };

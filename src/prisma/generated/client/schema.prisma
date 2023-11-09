@@ -1,0 +1,64 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-1.1.x"]
+  output        = "./generated/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Employee {
+  employee_id      Int                @id @default(autoincrement())
+  name             String
+  password         String
+  sector           String
+  Production_Order Production_Order[]
+}
+
+model Mold {
+  mold_id                 Int                @id @default(autoincrement())
+  name                    String
+  total_weight            Float
+  channel_return_weight   Float
+  channel_lost_percentage Float
+  mold_aluminium_loss     Float
+  Mold_Piece              Mold_Piece[]
+  Production_Order        Production_Order[]
+}
+
+model Piece {
+  piece_id                 Int          @id @default(autoincrement())
+  name                     String
+  size                     Int
+  gross_weight             Float
+  net_weight               Float
+  handle_type              String
+  splinter_lost_percentage Float
+  splinter                 Float
+  Mold_Piece               Mold_Piece[]
+}
+
+model Mold_Piece {
+  mold_piece_id Int   @id @default(autoincrement())
+  mold_fk       Int
+  piece_fk      Int
+  cavity        Int
+  mold          Mold  @relation(fields: [mold_fk], references: [mold_id])
+  piece         Piece @relation(fields: [piece_fk], references: [piece_id])
+}
+
+model Production_Order {
+  production_order_id Int       @id @default(autoincrement())
+  created_at          DateTime
+  finished_at          DateTime?
+  initial_counter     Int
+  final_counter        Int?
+  employee_fk         Int
+  mold_quantity       Int
+  mold_fk             Int
+  description         String?   @db.VarChar(300)
+  employee            Employee  @relation(fields: [employee_fk], references: [employee_id])
+  mold                Mold      @relation(fields: [mold_fk], references: [mold_id])
+}
