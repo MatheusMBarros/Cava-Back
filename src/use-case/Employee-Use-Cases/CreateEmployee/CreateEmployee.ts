@@ -7,7 +7,7 @@ type CreateEmployeeRequest = {
 	password: string;
 };
 
-export class CreateEmployee {
+export class CreateEmployee {  
 	private employeeRepository: EmployeeRepository;
 
 	constructor(employeeRepository: EmployeeRepository) {

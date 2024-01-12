@@ -36,7 +36,7 @@ export class PrismaProductionOrderRepository
 					initial_counter: initial_counter,
 					final_counter: final_counter,
 					mold_quantity: final_counter - initial_counter,
-					created_at: created_at,
+					created_at: new Date(),
 					finished_at: finished_at,
 					employee_fk: employee_fk,
 					mold_fk: mold_fk,
